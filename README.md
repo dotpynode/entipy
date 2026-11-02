@@ -1,0 +1,2 @@
+# entipy
+Python ECS pattern
