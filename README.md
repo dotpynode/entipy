@@ -1,2 +1,2 @@
 # entipy
-Python ECS pattern
+A small system entity component pattern for Python

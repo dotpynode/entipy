@@ -5,7 +5,7 @@ entipy
 
 A python ecs pattern
 
-:copyright: (c) 2026 by dotpynode
+:copyright: (c) 2026 by Martin Walchshofer
 
 """
 
@@ -17,4 +17,6 @@ from .__version__ import __version__
 
 # allow lazy loading
 from .pattern import component, entity, manager, system
-from .components import componentname
+from .components import component_name, component_counter
+from .systems import system_increment
+from .utilities import utilities

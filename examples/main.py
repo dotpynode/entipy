@@ -4,7 +4,7 @@ import os
 dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(dir))
 
-from entipy import entity, component, manager, system, components
+from entipy import entity, component, manager, system, components, systems
 
 def main():
     m = manager.Manager()
@@ -17,10 +17,15 @@ def main():
         m.add_entity(e)
 
         # add components
-        c = components.componentname.ComponentName(sid)
-        m.add_component(e, c)
+        m.add_component(e, components.component_name.ComponentName(sid))
+        m.add_component(e, components.component_counter.ComponentCounter())
     
+    # add systems
+    m.add_system(systems.system_increment.SystemIncrement())
     
+    while(True):
+        m.update_entities()
+
 
 if __name__ == "__main__":
     main()

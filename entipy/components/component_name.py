@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class ComponentName(Component):
-    name = ""
+    name : str = ""
 
     def __init__(self, name : str):
         self.name = name

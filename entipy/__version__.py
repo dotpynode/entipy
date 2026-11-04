@@ -5,7 +5,7 @@ entipy.version
 
 Version tracker.
 
-:copyright: (c) 2026 by dotpynode
+:copyright: (c) 2026 by Martin Walchshofer
 """
 
 VERSION = (0, 1)

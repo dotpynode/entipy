@@ -1,9 +1,11 @@
 from .entity import Entity
 from .component import Component
+from .system import System
 
 class Manager:
     def __init__(self) -> None:
         self.m_EC : dict[Entity, list[Component]] = {}
+        self.m_Systems : list[System] = []
 
     def add_entity(self, entity : Entity) -> None:
         if not isinstance(entity, Entity):
@@ -32,3 +34,18 @@ class Manager:
 
     def remove_component(self, entity : Entity, componenet : Component) -> None:
         pass
+
+    def add_system(self, system : System):
+        if not isinstance(system, System):
+            raise ValueError(f'System must be type of {str(System)}.')
+        if system in self.m_Systems:
+            raise ValueError(f'System already exists.')
+        self.m_Systems.append(system)
+
+    def remove_system(self, system : System):
+        pass
+
+    def update_entities(self):
+        for e in self.m_EC:
+            for s in self.m_Systems:
+                s.update(e, self.m_EC[e])
