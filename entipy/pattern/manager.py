@@ -33,7 +33,7 @@ class Manager:
         self.m_EC[entity].append(component)
 
     def remove_component(self, entity : Entity, componenet : Component) -> None:
-        pass
+        raise NotImplementedError('Not implemented yet.')
 
     def add_system(self, system : System):
         if not isinstance(system, System):
@@ -43,7 +43,7 @@ class Manager:
         self.m_Systems.append(system)
 
     def remove_system(self, system : System):
-        pass
+        raise NotImplementedError('Not implemented yet.')
 
     def update_entities(self):
         for e in self.m_EC:
